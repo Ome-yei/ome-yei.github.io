@@ -1,0 +1,26 @@
+:root {
+    --font-size: 16px;
+    --font-family-headers: 'Open Sans';
+    --font-family-body: 'Montserrat';
+    --font-weight-light: 100;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 500;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --font-max-width: 600px;
+
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    --spacing-x-large: 32px;
+    --spacing-xx-large: 40px;
+
+    --container-max-width: 1440px;
+
+    --neutral-light: hsl(53, 2%, 97%);
+    --neutral-grey: #d8dadb91;
+    --neutral-dark: #252F3F;
+
+    --primary-light: hsl(60, 100%, 97%);
+    --primary-neutral: hsl(39, 78%, 57%);
+}
