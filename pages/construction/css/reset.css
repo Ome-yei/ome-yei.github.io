@@ -64,3 +64,24 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
+/* Adapted from https://medium.com/@draganeror/iphone-x-layout-features-with-css-environment-variables-d57423433dec */
+/* Browsers which fully support CSS variables (iOS 11.2+).*/
+@supports (padding-top: env(safe-area-inset-top)) {
+  body {
+    --safe-area-inset-top: env(safe-area-inset-top);
+    height: calc(100% + var(--safe-area-inset-top));
+  }
+}
+
+@media (display-mode: fullscreen) {
+  body {
+    height: 100%;
+  }
+}
+
+@media (display-mode: standalone) {
+  body {
+    height: 100%;
+  }
+}
