@@ -30,8 +30,7 @@ const hamburgerIconColors = {
 
 /* change header and Icon colors onScroll */
 const headerContainer = document.querySelector(".navigation-header-container");
-// TODO: target the hero section class. Then get the height of that section with .getBoundingClientRect().height;.
-const heroSection = document.querySelector(".temp-erase-me");
+const heroSection = document.querySelector(".hero-section");
 
 const logoImgElement = document.querySelector(
   ".navigation-header-logo-container img"
@@ -43,7 +42,7 @@ const navMenuContainerElement = document.querySelector(
   ".navigation-header-nav-container"
 );
 
-const updateHeaderContainerColor = (entries) => {
+const headerObserver = new IntersectionObserver((entries, headerObserver) => {
   const isNavMenuOpen = navMenuContainerElement.classList.contains(
     "show_navigation-header-nav-container"
   );
@@ -61,10 +60,8 @@ const updateHeaderContainerColor = (entries) => {
       ? hamburgerIconColors.whiteSrc
       : closeIconColors.whiteSrc;
   }
-};
-
-const headerObserver = new IntersectionObserver(updateHeaderContainerColor, {
-  rootMargin: "-1995px 0px 0px 0px", // TODO: change the values when the hero section is done.
+}, {
+  rootMargin: `-500px 0px 0px 0px`,
 });
 
 headerObserver.observe(heroSection);
