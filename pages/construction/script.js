@@ -6,10 +6,10 @@
         [X] -> add border line to the bottom of the header when nav options are open
         [X] -> animate the nav menu coming in and out.
         [X] -> refactor code
-        [] -> style the nav options: 
-            remove the underline, 
-            onClick have nav item text go bold, 
-            close the nav item when a click event happens outside of it.
+        [X] -> style the nav options: 
+        [X] -> remove the underline, 
+        [X] -> close the nav menu when a click event happens outside of it.
+        [] -> scroll to the specific section when a nav item is clicked
 */
 
 /*=============================== HEADER ===============================*/
@@ -42,10 +42,15 @@ const navMenuContainerElement = document.querySelector(
   ".navigation-header-nav-container"
 );
 
+const observerOptions = {
+  rootMargin: `-500px 0px 0px 0px`,
+};
+
 const headerObserver = new IntersectionObserver((entries, headerObserver) => {
   const isNavMenuOpen = navMenuContainerElement.classList.contains(
     "show_navigation-header-nav-container"
   );
+
   const [entry] = entries;
   if (!entry.isIntersecting) {
     headerContainer.classList.add("add_navigation-header-container-color");
@@ -60,9 +65,7 @@ const headerObserver = new IntersectionObserver((entries, headerObserver) => {
       ? hamburgerIconColors.whiteSrc
       : closeIconColors.whiteSrc;
   }
-}, {
-  rootMargin: `-500px 0px 0px 0px`,
-});
+}, observerOptions);
 
 headerObserver.observe(heroSection);
 
@@ -71,36 +74,55 @@ const menuIconContainer = document.querySelector(
   ".navigation-header-menu-icon"
 );
 
-const toggleMenu = () => {
-  const isNavMenuOpen = navMenuContainerElement.classList.contains(
-    "show_navigation-header-nav-container"
-  );
+const hideNavMenu = () => {
   const isHeaderColorBackground = headerContainer.classList.contains(
     "add_navigation-header-container-color"
   );
-  const navMenuElementHeight = navMenuContainerElement.scrollHeight;
 
   const hamburgerIconSrc = isHeaderColorBackground
     ? hamburgerIconColors.colorSrc
     : hamburgerIconColors.whiteSrc;
 
+  menuImgElement.src = hamburgerIconSrc;
+  navMenuContainerElement.classList.remove(
+    "show_navigation-header-nav-container"
+  );
+  navMenuContainerElement.style.maxHeight = "0px";
+};
+
+const showNavMenu = () => {
+  const isHeaderColorBackground = headerContainer.classList.contains(
+    "add_navigation-header-container-color"
+  );
+
+  const navMenuElementHeight = navMenuContainerElement.scrollHeight;
+
   const closeIconSrc = isHeaderColorBackground
     ? closeIconColors.colorSrc
     : closeIconColors.whiteSrc;
 
-  if (isNavMenuOpen) {
-    menuImgElement.src = hamburgerIconSrc;
-    navMenuContainerElement.classList.remove(
-      "show_navigation-header-nav-container"
-    );
-    navMenuContainerElement.style.maxHeight = "0px";
-  } else {
-    menuImgElement.src = closeIconSrc;
-    navMenuContainerElement.classList.add(
-      "show_navigation-header-nav-container"
-    );
-    navMenuContainerElement.style.maxHeight = `${navMenuElementHeight}px`;
-  }
+  menuImgElement.src = closeIconSrc;
+  navMenuContainerElement.classList.add("show_navigation-header-nav-container");
+  // set max-height to animate the nav menu opening
+  navMenuContainerElement.style.maxHeight = `${navMenuElementHeight}px`;
+};
+
+const toggleMenu = () => {
+  const isNavMenuOpen = navMenuContainerElement.classList.contains(
+    "show_navigation-header-nav-container"
+  );
+  isNavMenuOpen ? hideNavMenu() : showNavMenu();
+};
+
+const hideNavMenuWhenClickedOutside = (event) => {
+  const clickedInsideNavMenu = headerContainer.contains(event.target);
+  const isNavMenuOpen = navMenuContainerElement.classList.contains(
+    "show_navigation-header-nav-container"
+  );
+
+  const shouldHideNavMenu = !clickedInsideNavMenu && isNavMenuOpen;
+  shouldHideNavMenu && hideNavMenu();
 };
 
 menuIconContainer.addEventListener("click", toggleMenu);
+document.addEventListener("click", hideNavMenuWhenClickedOutside);
