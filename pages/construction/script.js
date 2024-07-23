@@ -126,3 +126,15 @@ const hideNavMenuWhenClickedOutside = (event) => {
 
 menuIconContainer.addEventListener("click", toggleMenu);
 document.addEventListener("click", hideNavMenuWhenClickedOutside);
+
+// on nav menu item click hide the nav menu - first check if the navMenu is open
+const onNavLinkClickCloseNavMenu = () => {
+  const navItemLinks = document.querySelectorAll(".nav-items-links");
+  navItemLinks.forEach(item => {
+    item.addEventListener("click", hideNavMenu)
+  })
+}
+
+onNavLinkClickCloseNavMenu();
+
+
