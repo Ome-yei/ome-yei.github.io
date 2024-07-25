@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Alegria" />
+    <meta property="og:title" content="Alegria" />
+
+    <title>Hero Section Image Slider</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="main-nav">
+      <ul class="main-nav__list">
+        <li class="main-nav__item">Click Me</li>
+        <li class="main-nav__item">No, Click Me</li>
+        <li class="main-nav__item">Just Click Me</li>
+      </ul>
+    </nav>
+
+    <section class="hero__section">
+      <div class="carousel">
+        <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <li class="carousel__slide carousel__slide--active">
+              <img src="./assets/images/img-1.png" class="carousel__img" />
+            </li>
+            <li class="carousel__slide">
+              <img src="./assets/images/img-2.png" class="carousel__img" />
+            </li>
+            <li class="carousel__slide">
+              <img src="./assets/images/img-3.png" class="carousel__img" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero__section-info container">
+        <h1 class="hero__section-title">
+          J&L <br />
+          CONSTRUCTION <br />
+          LLC
+        </h1>
+        <p class="hero__section-description">
+          A <span>family owned</span> company <br />
+          specialized in heavy civil <br />utilities
+        </p>
+        <button class="hero__section-button">View Projects</button>
+      </div>
+      <div class="carousel__nav">
+        <button class="carousel__indicator carousel__nav--active"></button>
+        <button class="carousel__indicator"></button>
+        <button class="carousel__indicator"></button>
+      </div>
+    </section>
+  </body>
+</html>
