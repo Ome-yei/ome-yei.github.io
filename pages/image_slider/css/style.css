@@ -31,7 +31,7 @@
 /* Hero Section */
 .hero__section {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   display: flex;
   align-items: center;
