@@ -29,13 +29,37 @@
         <div class="carousel__track-container">
           <ul class="carousel__track">
             <li class="carousel__slide carousel__slide--active">
-              <img src="./assets/images//reSize_images/img-1_small.png" class="carousel__img" />
+              <img
+                class="carousel__img"
+                srcset="
+                  ./assets/images/mobile/img1_mobile.png    772w,
+                  ./assets/images/desktop/img1_desktop.png 1920w
+                "
+                sizes="(max-width: 768px) 772px, 1920px"
+                src="./assets/images/mobile/img1_mobile.png"
+              />
             </li>
             <li class="carousel__slide">
-              <img src="./assets/images/img-2.png" class="carousel__img" />
+              <img
+                src="./assets/images/desktop/img2_desktop.png"
+                class="carousel__img"
+                srcset="
+                  ./assets/images/mobile/img2_mobile.png    768w,
+                  ./assets/images/desktop/img2_desktop.png 1920w
+                "
+                sizes="(max-width: 768px) 768px, 1920px"
+              />
             </li>
             <li class="carousel__slide">
-              <img src="./assets/images/img-3.png" class="carousel__img" />
+              <img
+                src="./assets/images/desktop/img3_desktop.png"
+                class="carousel__img"
+                srcset="
+                  ./assets/images/mobile/img3_mobile.png    768w,
+                  ./assets/images/desktop/img3_desktop.png 1920w
+                "
+                sizes="(max-width: 768px) 768px, 1920px"
+              />
             </li>
           </ul>
         </div>
