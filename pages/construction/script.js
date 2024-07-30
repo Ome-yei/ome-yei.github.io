@@ -38,7 +38,7 @@ const hamburgerIconColors = {
 
 // change header and Icon colors onScroll
 const observerOptions = {
-  rootMargin: `-1000px 0px 0px 0px`,
+  rootMargin: `-500px 0px 0px 0px`,
 };
 
 const headerObserver = new IntersectionObserver((entries, headerObserver) => {
