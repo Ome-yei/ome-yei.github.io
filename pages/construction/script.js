@@ -1,18 +1,24 @@
-/*
-    TODO: 
-        [X] ->  on hamburger menu icon click, display the nav menu by adding the class and also change the icon to the closing icon
-        [X] -> have the logo and icon change color from white to color when user scrolls - this will be done by changing the svg
-        [] -> on nav option click, take the user to the clicked section - implement when sections are setup
-        [X] -> add border line to the bottom of the header when nav options are open
-        [X] -> animate the nav menu coming in and out.
-        [X] -> refactor code
-        [X] -> style the nav options: 
-        [X] -> remove the underline, 
-        [X] -> close the nav menu when a click event happens outside of it.
-        [] -> scroll to the specific section when a nav item is clicked
-*/
+/* Query Selectors */
+const headerContainer = document.querySelector(".navigation-header-container");
+const heroSection = document.querySelector(".hero__section");
 
-/*=============================== HEADER ===============================*/
+const logoImgElement = document.querySelector(
+  ".navigation-header-logo-container img"
+);
+const menuImgElement = document.querySelector(
+  ".navigation-header-menu-icon img"
+);
+const navMenuContainerElement = document.querySelector(
+  ".navigation-header-nav-container"
+);
+
+const menuIconContainer = document.querySelector(
+  ".navigation-header-menu-icon"
+);
+
+const navItemLinks = document.querySelectorAll(".nav-items-links");
+
+/* Global Constants */
 const logoColors = {
   colorSrc: "assets/logo/J&L Logo-Color.svg",
   whiteSrc: "assets/logo/J&L Logo-White.svg",
@@ -28,22 +34,11 @@ const hamburgerIconColors = {
   whiteSrc: "assets/icons/menu_Icon-white.svg",
 };
 
-/* change header and Icon colors onScroll */
-const headerContainer = document.querySelector(".navigation-header-container");
-const heroSection = document.querySelector(".hero-section");
+/*=============================== HEADER ===============================*/
 
-const logoImgElement = document.querySelector(
-  ".navigation-header-logo-container img"
-);
-const menuImgElement = document.querySelector(
-  ".navigation-header-menu-icon img"
-);
-const navMenuContainerElement = document.querySelector(
-  ".navigation-header-nav-container"
-);
-
+// change header and Icon colors onScroll
 const observerOptions = {
-  rootMargin: `-500px 0px 0px 0px`,
+  rootMargin: `-1000px 0px 0px 0px`,
 };
 
 const headerObserver = new IntersectionObserver((entries, headerObserver) => {
@@ -69,11 +64,7 @@ const headerObserver = new IntersectionObserver((entries, headerObserver) => {
 
 headerObserver.observe(heroSection);
 
-/* toggle open nav menu */
-const menuIconContainer = document.querySelector(
-  ".navigation-header-menu-icon"
-);
-
+// toggle open nav menu
 const hideNavMenu = () => {
   const isHeaderColorBackground = headerContainer.classList.contains(
     "add_navigation-header-container-color"
@@ -129,12 +120,64 @@ document.addEventListener("click", hideNavMenuWhenClickedOutside);
 
 // on nav menu item click hide the nav menu - first check if the navMenu is open
 const onNavLinkClickCloseNavMenu = () => {
-  const navItemLinks = document.querySelectorAll(".nav-items-links");
-  navItemLinks.forEach(item => {
-    item.addEventListener("click", hideNavMenu)
-  })
-}
+  navItemLinks.forEach((item) => {
+    item.addEventListener("click", hideNavMenu);
+  });
+};
 
 onNavLinkClickCloseNavMenu();
 
+/*=============================== Hero Section ===============================*/
+const track = document.querySelector(".carousel__track");
+const slides = Array.from(track.children);
+const carouselNav = document.querySelector(".carousel__nav");
+const carouselIndicators = Array.from(carouselNav.children);
+let timer = null;
 
+const moveSlide = (currentSlide, targetedSlide) => {
+  currentSlide.classList.remove("carousel__slide--active");
+  targetedSlide.classList.add("carousel__slide--active");
+};
+
+const moveNavIndicator = (currentNavIndicator, targetedNavIndicator) => {
+  currentNavIndicator.classList.remove("carousel__nav--active");
+  targetedNavIndicator.classList.add("carousel__nav--active");
+};
+
+const carouselController = (targetedSlide, targetedIndex) => {
+  let nextSlide = targetedSlide;
+  let nextIndicator = targetedIndex;
+
+  const currentSlide = track.querySelector(".carousel__slide--active");
+  const currentNavIndicator = carouselNav.querySelector(
+    ".carousel__nav--active"
+  );
+
+  if (!nextSlide)
+    nextSlide = currentSlide.nextElementSibling
+      ? currentSlide.nextElementSibling
+      : slides[0];
+
+  if (!nextIndicator)
+    nextIndicator = currentNavIndicator.nextElementSibling
+      ? currentNavIndicator.nextElementSibling
+      : carouselIndicators[0];
+
+  moveSlide(currentSlide, nextSlide);
+  moveNavIndicator(currentNavIndicator, nextIndicator);
+
+  timer = setTimeout(() => carouselController(), 3500);
+};
+
+const onNavigationIndicatorClick = (e) => {
+  const targetCarouselIndicator = e.target.closest("button");
+  if (!targetCarouselIndicator) return;
+  clearTimeout(timer);
+  const indicatorIndex = carouselIndicators.findIndex(
+    (indicator) => indicator === targetCarouselIndicator
+  );
+  const targetedSlide = slides[indicatorIndex];
+  carouselController(targetedSlide, targetCarouselIndicator);
+};
+
+setTimeout(() => carouselController(), 2500);

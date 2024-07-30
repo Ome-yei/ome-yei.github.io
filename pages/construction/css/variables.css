@@ -1,26 +1,33 @@
 :root {
-    --font-size: 16px;
-    --font-family-headers: 'Open Sans';
-    --font-family-body: 'Montserrat';
-    --font-weight-light: 100;
-    --font-weight-regular: 400;
-    --font-weight-semi-bold: 500;
-    --font-weight-bold: 700;
-    --font-weight-black: 900;
-    --font-max-width: 600px;
+  --font-size-base: 1rem; /*16px*/
+  --font-size-h1: 2.5rem; /*40px*/
+  --font-size-h2: 1.875rem; /*30px*/
+  --font-size-h3: 1.5rem; /*24px*/
+  --font-size-h4: 1.25rem; /*20px*/
 
-    --spacing-small: 8px;
-    --spacing-medium: 16px;
-    --spacing-large: 24px;
-    --spacing-x-large: 32px;
-    --spacing-xx-large: 40px;
+  --font-family-headers: "Open Sans";
+  --font-family-body: "Montserrat";
 
-    --container-max-width: 1440px;
+  --font-weight-light: 100;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
 
-    --neutral-light: hsl(53, 2%, 97%);
-    --neutral-grey: #d8dadb91;
-    --neutral-dark: #252F3F;
+  --font-max-width: 37.5rem; /*600px*/
 
-    --primary-light: hsl(60, 100%, 97%);
-    --primary-neutral: hsl(39, 78%, 57%);
+  --spacing-small: 0.5rem; /*8px*/
+  --spacing-medium: 1rem; /*16px*/
+  --spacing-large: 1.5rem; /*24px*/
+  --spacing-x-large: 2rem; /*32px*/
+  --spacing-xx-large: 2.5rem; /*40px*/
+
+  --container-max-width: 90rem; /*1440px*/
+
+  --neutral-light: hsl(53, 2%, 97%);
+  --neutral-grey: #d8dadb91;
+  --neutral-dark: #252f3f;
+
+  --primary-light: hsl(60, 100%, 97%);
+  --primary-neutral: hsl(39, 78%, 57%);
 }
