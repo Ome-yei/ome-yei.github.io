@@ -50,5 +50,5 @@ const onNavigationIndicatorClick = (e) => {
   carouselController(targetedSlide, targetCarouselIndicator);
 };
 
-setTimeout(() => carouselController(), 2500);
+setTimeout(() => carouselController(), 3500);
 carouselNav.addEventListener("click", onNavigationIndicatorClick);
