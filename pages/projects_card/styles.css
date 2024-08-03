@@ -1,0 +1,73 @@
+.projects {
+  padding: 24px 16px;
+  background-color: rgba(255, 255, 255, 0.608);
+}
+
+.projects__heading {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.projects__body {
+  width: 100%;
+  border: 1px solid green;
+  position: relative;
+}
+
+.media-scroller {
+  --_spacer: 24px;
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 95%;
+
+  padding: 0 var(--_spacer) var(--_spacer);
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+  scroll-behavior: smooth;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  margin-top: 24px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 40px;
+}
+
+.card__header {
+  /* border: 1px solid red; */
+  width: 95%;
+  margin-inline: auto;
+}
+
+.card__figure {
+  /* border: 1px solid green;
+  background: blue; */
+}
+
+.card__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__body {
+  margin-top: 24px;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.card__copy {
+  margin-top: 24px;
+}
