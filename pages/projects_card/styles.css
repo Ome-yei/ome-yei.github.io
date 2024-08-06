@@ -1,6 +1,17 @@
+body {
+  background-color: #f5f5f7;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .projects {
   padding: 24px 16px;
-  background-color: rgba(255, 255, 255, 0.608);
 }
 
 .projects__heading {
@@ -10,7 +21,6 @@
 
 .projects__body {
   width: 100%;
-  border: 1px solid green;
   position: relative;
 }
 
@@ -19,7 +29,7 @@
   display: grid;
   gap: var(--_spacer);
   grid-auto-flow: column;
-  grid-auto-columns: 95%;
+  grid-auto-columns: 90%;
 
   padding: 0 var(--_spacer) var(--_spacer);
 
@@ -35,35 +45,30 @@
 
 .snaps-inline > * {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .card {
   background-color: rgb(255, 255, 255);
   margin-top: 24px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  padding-top: 8px;
-  padding-bottom: 40px;
+  padding-bottom: 16px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 
 .card__header {
-  /* border: 1px solid red; */
-  width: 95%;
-  margin-inline: auto;
-}
-
-.card__figure {
-  /* border: 1px solid green;
-  background: blue; */
+  border-bottom: 8px solid #e7ac3c;
 }
 
 .card__image {
+  max-height: 400px;
   width: 100%;
   object-fit: cover;
 }
 
 .card__body {
-  margin-top: 24px;
+  margin-top: 16px;
   width: 95%;
   margin-inline: auto;
 }
