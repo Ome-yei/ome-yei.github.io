@@ -61,6 +61,10 @@ body {
   border-bottom: 8px solid #e7ac3c;
 }
 
+.card__subtitle {
+  font-weight: 400;
+}
+
 .card__image {
   max-height: 400px;
   width: 100%;
@@ -70,7 +74,7 @@ body {
 .card__body {
   margin-top: 16px;
   width: 95%;
-  margin-inline: auto;
+  padding: 16px 16px 0px 16px;
 }
 
 .card__copy {
