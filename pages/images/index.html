@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Alegria" />
+    <meta property="og:title" content="Alegria" />
+
+    <title>Images</title>
+
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <img
+      srcset="
+        ./assets/webp/slider-img1-mobile.webp   800w,
+        ./assets/webp/slider-img1-desktop.webp 1200w
+      "
+      sizes="(min-width: 770px) 1200w, 800w"
+      src="./assets/webp/slider-img1-mobile.webp"
+      alt="A Heavy machinery in front of a trench"
+      class="images"
+    />
+
+    <div class="img-container">
+      <img class="images" src="./assets/webp/slider-img1-desktop.webp" alt="" />
+    </div>
+
+    <div class="img-container">
+      <img class="images" src="./assets/original/Group 196.webp" alt="" />
+    </div>
+  </body>
+</html>
