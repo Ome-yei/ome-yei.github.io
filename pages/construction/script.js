@@ -34,6 +34,12 @@ const hamburgerIconColors = {
   whiteSrc: "assets/icons/menu_Icon-white.svg",
 };
 
+/* Utils */
+const isWindowGreaterThan = (size) => {
+  const windowSize = window.innerWidth;
+  return windowSize > size;
+};
+
 /*=============================== HEADER ===============================*/
 
 // change header and Icon colors onScroll
@@ -53,12 +59,23 @@ const headerObserver = new IntersectionObserver((entries, headerObserver) => {
     menuImgElement.src = !isNavMenuOpen
       ? hamburgerIconColors.colorSrc
       : closeIconColors.colorSrc;
+    // execute function to check if window is > 769 to set the color to the nav links
+    if (isWindowGreaterThan(768)) {
+      navItemLinks.forEach((item) => {
+        item.classList.add("nav-item-link-second-color");
+      });
+    }
   } else {
     headerContainer.classList.remove("add_navigation-header-container-color");
     logoImgElement.src = logoColors.whiteSrc;
     menuImgElement.src = !isNavMenuOpen
       ? hamburgerIconColors.whiteSrc
       : closeIconColors.whiteSrc;
+    if (isWindowGreaterThan(768)) {
+      navItemLinks.forEach((item) => {
+        item.classList.remove("nav-item-link-second-color");
+      });
+    }
   }
 }, observerOptions);
 

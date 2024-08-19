@@ -20,6 +20,11 @@
   width: 100%;
   top: 0;
   transition: background 250ms ease-in;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
 }
 
 .navigation-header {
@@ -46,6 +51,10 @@
   background-color: var(--neutral-light);
   padding-top: var(--spacing-medium);
   padding-bottom: var(--spacing-medium);
+}
+
+.desktop__navigation-header-nav {
+  display: none;
 }
 
 .navigation-header-nav-container {
@@ -136,7 +145,7 @@
 .hero__section-title {
   font-weight: bold;
   text-align: center;
-  font-size: 40px;
+  font-size: var(--font-size-h1-mobile);
   margin-bottom: 16px;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
@@ -157,8 +166,7 @@
 
 .hero__section-button {
   padding: 5px 7px;
-
-  border: 1px solid #ffc261;
+  border: 2px solid #ffc261;
   border-radius: 2px;
 
   line-height: 22px;
@@ -175,6 +183,7 @@
 }
 
 .carousel__nav {
+  z-index: -1;
   right: 50%;
   transform: translateX(50%);
   position: absolute;
@@ -183,7 +192,7 @@
 
 .carousel__indicator {
   width: 30px;
-  height: 5px;
+  height: 6px;
   border: none;
   opacity: 0.5;
   border-radius: 0.5px;
@@ -199,4 +208,46 @@
   opacity: 1;
   background-color: #fff;
   transition-delay: 0ms;
+}
+
+/*******************************/
+/**** Media Query - 770px ******/
+/*******************************/
+@media screen and (min-width: 770px) {
+  /***************************************/
+  /********* Nav Section ****************/
+  /********  min-width: 770px ************/
+  /***************************************/
+  .navigation-header-menu-icon {
+    display: none;
+  }
+  .navigation-header-nav-container {
+    display: none;
+  }
+
+  .desktop__navigation-header-nav {
+    display: block;
+  }
+  .desktop__navigation-header-nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-items-links {
+    color: var(--neutral-light);
+  }
+  .nav-item-link-second-color {
+    color: var(--neutral-dark) !important;
+  }
+
+  /***************************************/
+  /********* Hero Section ****************/
+  /********  min-width: 770px ************/
+  /***************************************/
+  .hero__section-title {
+    font-size: var(--font-size-h1-770);
+  }
+
+  .carousel__indicator {
+    width: 40px;
+  }
 }
