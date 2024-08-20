@@ -211,6 +211,35 @@
 }
 
 /*******************************/
+/********* Page Section ********/
+/*******************************/
+.page__section {
+  scroll-margin-top: 64px;
+  padding-top: var(--spacing-large);
+  padding-bottom: var(--spacing-large);
+}
+
+.page__section-header {
+  color: var(--secondary-neutral);
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-left: 14px;
+  margin-bottom: var(--spacing-large);
+  z-index: -1;
+}
+
+.page__section-header::before {
+  position: absolute;
+  content: "";
+  left: -14px;
+  width: 6px;
+  height: 100%;
+  background-color: var(--primary-neutral);
+}
+
+/*******************************/
 /**** Media Query - 770px ******/
 /*******************************/
 @media screen and (min-width: 770px) {
@@ -249,5 +278,18 @@
 
   .carousel__indicator {
     width: 40px;
+  }
+}
+
+/*******************************/
+/**** Media Query - 1200px *****/
+/*******************************/
+@media screen and (min-width: 1200px) {
+  /***************************************/
+  /********* Hero Section ****************/
+  /********  min-width: 1200px ***********/
+  /***************************************/
+  .hero__section-title {
+    font-size: var(--font-size-h1-1200);
   }
 }

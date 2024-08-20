@@ -34,6 +34,8 @@ const hamburgerIconColors = {
   whiteSrc: "assets/icons/menu_Icon-white.svg",
 };
 
+const desktopDimensions = 768;
+
 /* Utils */
 const isWindowGreaterThan = (size) => {
   const windowSize = window.innerWidth;
@@ -52,6 +54,8 @@ const headerObserver = new IntersectionObserver((entries, headerObserver) => {
     "show_navigation-header-nav-container"
   );
 
+  const isDesktopVersion = isWindowGreaterThan(desktopDimensions);
+
   const [entry] = entries;
   if (!entry.isIntersecting) {
     headerContainer.classList.add("add_navigation-header-container-color");
@@ -59,23 +63,21 @@ const headerObserver = new IntersectionObserver((entries, headerObserver) => {
     menuImgElement.src = !isNavMenuOpen
       ? hamburgerIconColors.colorSrc
       : closeIconColors.colorSrc;
-    // execute function to check if window is > 769 to set the color to the nav links
-    if (isWindowGreaterThan(768)) {
+    // handle the color change for the nav item links.
+    if (isDesktopVersion)
       navItemLinks.forEach((item) => {
         item.classList.add("nav-item-link-second-color");
       });
-    }
   } else {
     headerContainer.classList.remove("add_navigation-header-container-color");
     logoImgElement.src = logoColors.whiteSrc;
     menuImgElement.src = !isNavMenuOpen
       ? hamburgerIconColors.whiteSrc
       : closeIconColors.whiteSrc;
-    if (isWindowGreaterThan(768)) {
+    if (isDesktopVersion)
       navItemLinks.forEach((item) => {
         item.classList.remove("nav-item-link-second-color");
       });
-    }
   }
 }, observerOptions);
 
