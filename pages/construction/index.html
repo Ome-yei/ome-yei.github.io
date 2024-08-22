@@ -117,19 +117,22 @@
               <li class="carousel__slide carousel__slide--active">
                 <img
                   class="carousel__img"
-                  src="assets/images/Landing/landing-img1.webp"
+                  src="./assets/images/Landing/landing-img1.webp"
+                  alt="Excavator in front of a trench."
                 />
               </li>
               <li class="carousel__slide">
                 <img
-                  src="assets/images/Landing/landing-img2.webp"
+                  src="./assets/images/Landing/landing-img2.webp"
                   class="carousel__img"
+                  alt="Excavator collecting dirt."
                 />
               </li>
               <li class="carousel__slide">
                 <img
-                  src="assets/images/Landing/landing-img3.webp"
+                  src="./assets/images/Landing/landing-img3.webp"
                   class="carousel__img"
+                  alt="A group of construction workers observing an excavator digging a trench."
                 />
               </li>
             </ul>
@@ -150,9 +153,18 @@
           </a>
         </div>
         <div class="carousel__nav">
-          <button class="carousel__indicator carousel__nav--active"></button>
-          <button class="carousel__indicator"></button>
-          <button class="carousel__indicator"></button>
+          <button
+            class="carousel__indicator carousel__nav--active"
+            aria-label="slide-img-indicator-one"
+          ></button>
+          <button
+            class="carousel__indicator"
+            aria-label="slide-img-indicator-two"
+          ></button>
+          <button
+            class="carousel__indicator"
+            aria-label="slide-img-indicator-three"
+          ></button>
         </div>
       </section>
       <!------------------------------------------->
@@ -161,35 +173,74 @@
       <section id="services" class="page__section projects__section">
         <div class="service__container container">
           <h2 class="page__section-header">Services</h2>
-          <div class="section__img-container">
-            <img src="assets/images/Services/service-img3.webp" alt="" />
-          </div>
-          <div class="section__body">
-            <p>
-              J&amp;L Construction’s main scope includes waterline, sewer line,
-              storm drainage, concrete, and pavement rehabilitation.  We have
-              successfully executed various significant contracts, including:
-            </p>
-            <ul>
-              <li>
-                More than 30,000 linear feet of water and wastewater
-                rehabilitation
-              </li>
-              <li>
-                More than 6,000 linear feet of new waterline and waterline
-                relocations
-              </li>
-              <li>
-                Installing new waterline utilizing directional bore and dry bore
-              </li>
-              <li>Installing storm drainage systems</li>
-              <li>Replacement of more than 5,000 square yards of asphalt.</li>
-            </ul>
-            <p>
-              Our projects span multiple municipalities and have consistently
-              been completed on schedule, demonstrating J&amp;L Construction’s
-              expertise in delivering high-quality infrastructure solutions.
-            </p>
+          <div class="service-desktop-grid">
+            <div class="service__grid-container">
+              <div
+                class="service__img-container grid-col-span-4 grid-row-span-4 mobile-hide-img"
+              >
+                <img
+                  src="assets/images/Services/service-img4.webp"
+                  alt="A skid-steer loading up an eighteen wheeler with dirt."
+                  class="page__section_img"
+                />
+              </div>
+              <div
+                class="service__img-container grid-col-span-2 grid-row-span-3 mobile-hide-img"
+              >
+                <img
+                  src="assets/images/Services/service-img2.webp"
+                  alt="A skid-steer loading up an eighteen wheeler with dirt."
+                  class="page__section_img"
+                />
+              </div>
+              <div
+                class="service__img-container grid-col-span-4 grid-row-span-3 mobile-hide-img"
+              >
+                <img
+                  src="assets/images/Services/service-img1.webp"
+                  alt="A skid-steer loading up an eighteen wheeler with dirt."
+                  class="page__section_img"
+                />
+              </div>
+              <div
+                class="service__img-container grid-col-span-2 last-grid-container"
+              >
+                <img
+                  src="assets/images/Services/service-img3.webp"
+                  alt="A skid-steer loading up an eighteen wheeler with dirt."
+                  class="page__section_img"
+                />
+              </div>
+            </div>
+            <div class="page__section__body">
+              <p class="service__body-top">
+                J&amp;L Construction’s main scope includes waterline, sewer
+                line, storm drainage, concrete, and pavement rehabilitation.  We
+                have successfully executed various significant contracts,
+                including:
+              </p>
+              <ul class="service__body--list">
+                <li>
+                  More than 30,000 linear feet of water and wastewater
+                  rehabilitation.
+                </li>
+                <li>
+                  More than 6,000 linear feet of new waterline and waterline
+                  relocations.
+                </li>
+                <li>
+                  Installing new waterline utilizing directional bore and dry
+                  bore.
+                </li>
+                <li>Installing storm drainage systems</li>
+                <li>Replacement of more than 5,000 square yards of asphalt.</li>
+              </ul>
+              <p>
+                Our projects span multiple municipalities and have consistently
+                been completed on schedule, demonstrating J&amp;L Construction’s
+                expertise in delivering high-quality infrastructure solutions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -200,36 +251,7 @@
         <div class="about_container container">
           <h2 class="page__section-header">About</h2>
           <div class="section__img-container">
-            <img
-              src="assets/images/Landing/landing-img2.webp"
-              alt=""
-              style="width: 100%; height: 500px"
-            />
-          </div>
-          <div class="section__body">
-            <p>
-              J&amp;L Construction is a family-owned civil utilities
-              construction company based in the DFW area. We specialize in heavy
-              construction projects related to underground utilities with over
-              75 years of combined experience. We aim for excellence while
-              ensuring we meet the highest safety standards for every project.
-              At J&amp;L Construction we pride ourselves on our conservative
-              values and hard-working team. By utilizing ethical business
-              practices, we strive to cultivate a culture of accountability,
-              collaboration, and mutual respect among our team and clients.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="page__section about__section">
-        <div class="about_container container">
-          <h2 class="page__section-header">About</h2>
-          <div class="section__img-container">
-            <img
-              src="assets/images/Landing/landing-img2.webp"
-              alt=""
-              style="width: 100%; height: 500px"
-            />
+            <!-- <img src="assets/images/Services/service-img4.webp" alt="" /> -->
           </div>
           <div class="section__body">
             <p>
