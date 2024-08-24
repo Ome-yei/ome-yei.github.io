@@ -19,6 +19,11 @@
 /**********************************/
 /********* Navigation Menu ********/
 /**********************************/
+.navigation-header-z-index-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
 .navigation-header-container {
   position: fixed;
   width: 100%;
@@ -187,7 +192,6 @@
 }
 
 .carousel__nav {
-  z-index: -1;
   right: 50%;
   transform: translateX(50%);
   position: absolute;
@@ -231,7 +235,6 @@
   text-transform: uppercase;
   margin-left: 14px;
   margin-bottom: var(--spacing-large);
-  z-index: -1;
 }
 
 .page__section-header::before {
@@ -247,7 +250,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 3/2;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -256,11 +258,9 @@
   max-width: var(--content-container-max-width);
 }
 
-.service__img-container {
-  max-width: var(--content-container-max-width);
-  margin-bottom: var(--spacing-medium);
-}
-
+/*******************************/
+/****** Service Section ********/
+/*******************************/
 .service__body-top {
   margin-bottom: var(--spacing-small);
 }
@@ -275,6 +275,60 @@
   margin-bottom: var(--spacing-medium);
 }
 
+.service__section-img {
+  max-width: var(--content-container-max-width);
+  margin-bottom: var(--spacing-medium);
+  aspect-ratio: 3/2;
+}
+
+/*******************************/
+/******** About Section ********/
+/*******************************/
+.about__section {
+  background-color: rgb(244, 247, 250);
+}
+
+.about__section-body {
+  margin: 0 auto;
+  max-width: var(--content-container-max-width);
+}
+
+.about__section-body-paragraph {
+  margin-bottom: var(--spacing-small);
+}
+
+.about__section-img-container {
+  max-width: var(--content-container-max-width);
+  margin: 0 auto;
+  margin-bottom: var(--spacing-medium);
+}
+
+/*******************************/
+/******** Team Section ********/
+/*******************************/
+.team__grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xx-large);
+}
+
+.team__card {
+  max-width: 325px;
+  margin: 0 auto;
+}
+.team__card-image {
+  width: 100%;
+}
+
+.team__card-title {
+  font-weight: 900;
+  font-size: 24px;
+}
+.team_card-subtitle {
+  font-weight: 400;
+  font-size: 20px;
+}
+/* ================================================================================================ */
 /*******************************/
 /**** Media Query - 770px ******/
 /*******************************/
@@ -313,6 +367,18 @@
     color: var(--neutral-dark) !important;
   }
 
+  /***************************************/
+  /********* Hero Section ****************/
+  /********  min-width: 770px ************/
+  /***************************************/
+  .hero__section-title {
+    font-size: var(--font-size-h1-770);
+  }
+
+  .carousel__indicator {
+    width: 40px;
+  }
+
   /* Services */
   .service__img-container {
     max-width: var(--content-container-max-width);
@@ -344,28 +410,29 @@
     gap: 0.5rem;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, 73px);
+    margin-bottom: var(--spacing-medium);
   }
 
-  /***************************************/
-  /********* Hero Section ****************/
-  /********  min-width: 770px ************/
-  /***************************************/
-  .hero__section-title {
-    font-size: var(--font-size-h1-770);
+  /* Team */
+  .team__grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xx-large);
   }
 
-  .carousel__indicator {
-    width: 40px;
+  .team__card {
+    margin: 0;
   }
 }
 
+/* ================================================================================================ */
 /*******************************/
-/**** Media Query - 1200px *****/
+/**** Media Query - 900px *****/
 /*******************************/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
   /***************************************/
   /********* Hero Section ****************/
-  /********  min-width: 1200px ***********/
+  /********  min-width: 900px ***********/
   /***************************************/
   .hero__section-title {
     font-size: var(--font-size-h1-1200);
@@ -386,5 +453,46 @@
 
   .service__grid-container {
     grid-column: 2/3;
+  }
+
+  /* Team */
+  .team__grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xx-large);
+  }
+}
+
+/* ================================================================================================ */
+
+@media screen and (min-width: 1250px) {
+  /***************************************/
+  /********* Hero Section ****************/
+  /********  min-width: 1250px ***********/
+  /***************************************/
+  /* About */
+  .about__section {
+    position: relative;
+    background-image: url(../assets/images/About/about-img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+  }
+  .about_container {
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    width: auto;
+    bottom: 0;
+    right: 0;
+    padding: var(--spacing-medium);
+    border-top-left-radius: var(--spacing-small);
+  }
+  .about__section-img-container {
+    display: none;
+  }
+
+  .about__section-body {
+    margin: 0;
+    max-width: var(--content-container-sm-max-width);
   }
 }
