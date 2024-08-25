@@ -285,7 +285,7 @@
 /******** About Section ********/
 /*******************************/
 .about__section {
-  background-color: rgb(244, 247, 250);
+  background-color: var(--sections-color);
 }
 
 .about__section-body {
@@ -328,6 +328,63 @@
   font-weight: 400;
   font-size: 20px;
 }
+
+/* Contact */
+.contact__section {
+  background-color: var(--sections-color);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1.125rem;
+}
+
+.contact__section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.contact__section-info {
+  grid-area: 1/1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__section-info-detail {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--spacing-medium);
+}
+
+.contact__section-icon-container {
+  margin-right: var(--spacing-medium);
+}
+
+.contact__logo-container {
+  grid-area: 1/1;
+}
+
+.contact__section-anchor {
+  color: var(--neutral-dark);
+}
+
+/* ================================================================================================ */
+/*******************************/
+/**** Media Query - 600px ******/
+/*******************************/
+@media screen and (min-width: 600px) {
+  .contact__section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: start;
+  }
+  .contact__logo-container {
+    grid-area: 1 / 2 / 1 / 2;
+  }
+  .contact__logo-container img {
+    width: 600px;
+  }
+}
+
 /* ================================================================================================ */
 /*******************************/
 /**** Media Query - 770px ******/
