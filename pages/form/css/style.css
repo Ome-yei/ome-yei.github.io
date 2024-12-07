@@ -188,6 +188,14 @@ form .form-row .textarea {
   outline: none;
 }
 
+@media (hover: hover) {
+  .submit-button_container button:hover {
+    cursor: pointer;
+    background-color: #ffc261;
+    color: #6d4c16;
+  }
+}
+
 @media (max-width: 700px) {
   .container .text {
     font-size: 30px;
@@ -206,13 +214,5 @@ form .form-row .textarea {
   }
   .submit-button_container button {
     width: 100%;
-  }
-}
-
-@media (hover: hover) {
-  .submit-button_container button:hover {
-    cursor: pointer;
-    background-color: #ffc261;
-    color: #6d4c16;
   }
 }
