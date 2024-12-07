@@ -37,52 +37,58 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-        <div class="text">
-           Contact us Form
+    <section id="apply now" class="page__section apply-now__section">
+      <div class="container">
+        <h2 class="page__section-header">Apply Now</h2>
+        <!-- Sending ... -->
+        <div class="sending-form loader"></div>
+        <!-- Form Submit Result -->
+        <div class="form-submit-result">
+          <img class="form-submit-result_icon" src="" alt="" />
+          <h4 class="form-submit-result_header"></h4>
+          <p class="form-submit-result_text"></p>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input
-            type="hidden"
-            name="access_key"
-            value="8dc4d7a7-bd3c-4ea3-99a4-d5ea0f637ed6"
-          />
-          <input type="hidden" name="subject" value="New Submission Jon Application">
-          <input type="checkbox" name="botcheck" id="" style="display: none;">
-
-           <div class="form-row">
-              <div class="input-data">
-                 <input type="text" name="first name" required>
-                 <div class="underline"></div>
-                 <label for="">First Name</label>
-              </div>
-              <div class="input-data">
-                 <input type="text" name="last name" required>
-                 <div class="underline"></div>
-                 <label for="">Last Name</label>
-              </div>
-           </div>
-           <div class="form-row">
-              <div class="input-data">
-                 <input type="email" name="email" required>
-                 <div class="underline"></div>
-                 <label for="">Email Address</label>
-              </div>
-              <div class="input-data">
-                 <input type="tel" name="phone number" required>
-                 <div class="underline"></div>
-                 <label for="">Phone Number</label>
-              </div>
-           </div>
-           <div class="form-row">
-           <div class="input-data textarea">
-              <div class="form-row submit-btn">
-                 <div class="input-data">
-                    <div class="inner"></div>
-                    <input type="submit" value="submit">
-                 </div>
-              </div>
-        </form>
-    </div>
+        <!-- Form -->
+        <div class="form-info">
+          <p>Interested in joining our team? We'd love to hear from you. Please fill out the form below and a member of our team will reach out to you shortly.</p>
+          <form action="https://api.web3forms.com/submit" method="POST" id="form">
+           <input
+           type="hidden"
+           name="access_key"
+           value="8dc4d7a7-bd3c-4ea3-99a4-d5ea0f637ed6"
+         />
+         <input type="hidden" name="subject" value="New Submission Jon Application">
+         <input type="checkbox" name="botcheck" id="" style="display: none;">
+  
+          <div class="form-row">
+             <div class="input-data">
+                <input type="text" name="first name" required>
+                <div class="underline"></div>
+                <label for="">First Name</label>
+             </div>
+             <div class="input-data">
+                <input type="text" name="last name" required>
+                <div class="underline"></div>
+                <label for="">Last Name</label>
+             </div>
+          </div>
+          <div class="form-row">
+             <div class="input-data">
+                <input type="email" name="email" required>
+                <div class="underline"></div>
+                <label for="">Email Address</label>
+             </div>
+             <div class="input-data">
+                <input type="tel" name="phone number" required>
+                <div class="underline"></div>
+                <label for="">Phone Number</label>
+             </div>
+          </div>
+          <div class="form-row submit-button_container">
+              <button type="submit">Submit</button>
+       </form>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
