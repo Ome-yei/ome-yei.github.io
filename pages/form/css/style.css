@@ -69,7 +69,7 @@ form .form-row .textarea {
 .textarea textarea:valid ~ label {
   transform: translateY(-20px);
   font-size: 14px;
-  color: #3498db;
+  color: var(--secondary-neutral);
 }
 .textarea textarea {
   resize: none;
@@ -98,7 +98,7 @@ form .form-row .textarea {
   content: "";
   height: 2px;
   width: 100%;
-  background: #3498db;
+  background: var(--secondary-neutral);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -235,4 +235,8 @@ form .form-row .textarea {
 
 .submit-button_container button {
   width: 100px;
+}
+
+.form-row input {
+  outline: none;
 }

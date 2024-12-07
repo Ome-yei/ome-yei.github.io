@@ -20,6 +20,8 @@ const formSubmitResult_Text = document.querySelector(
   ".form-submit-result_text"
 );
 
+const phoneNumberInput = document.getElementById("phoneInput");
+
 /***   Global  Variables   ***/
 const formSubmitResultMessages = {
   success: {
@@ -48,8 +50,20 @@ const setFormSubmitResult = ({ iconSrc, alt, header, headerColor, text }) => {
   formSubmitResult_Text.textContent = text;
 };
 
+function formatPhoneNumber(phoneNumberString) {
+  var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return match[1] + "-" + match[2] + "-" + match[3];
+  }
+  return null;
+}
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  // format phone number
+  phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
+
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
