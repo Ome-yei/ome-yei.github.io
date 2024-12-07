@@ -184,12 +184,6 @@ form .form-row .textarea {
   background-color: transparent;
 }
 
-.submit-button_container button:hover {
-  cursor: pointer;
-  background-color: #ffc261;
-  color: #6d4c16;
-}
-
 .form-row input {
   outline: none;
 }
@@ -212,5 +206,13 @@ form .form-row .textarea {
   }
   .submit-button_container button {
     width: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .submit-button_container button:hover {
+    cursor: pointer;
+    background-color: #ffc261;
+    color: #6d4c16;
   }
 }
