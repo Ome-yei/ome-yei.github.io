@@ -188,6 +188,60 @@ form .form-row .textarea {
   outline: none;
 }
 
+/* Attachment */
+.attachment__container {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 20px; */
+}
+
+.attachment__input__label {
+  margin-bottom: 8px;
+}
+
+.attachment__input__file__container {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+}
+
+.attachment__uploaded__file__name {
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.attachment__input {
+  border: 1px solid #8792a3;
+  border-radius: 2px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.attachment__input_container input {
+  opacity: 0;
+}
+
+.attachment__upload__icon {
+  cursor: pointer;
+  background-color: #8792a3;
+  padding: 8px;
+}
+
+.attachment__upload__icon:hover {
+  background-color: #616f85;
+}
+
+.attachment__remove__icon {
+  cursor: pointer;
+  display: none;
+}
+
 @media (hover: hover) {
   .submit-button_container button:hover {
     cursor: pointer;

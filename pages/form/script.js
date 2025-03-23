@@ -22,6 +22,9 @@ const formSubmitResult_Text = document.querySelector(
 
 const phoneNumberInput = document.getElementById("phoneInput");
 
+// Attachment
+const file = document.getElementById("attachment");
+
 /***   Global  Variables   ***/
 const formSubmitResultMessages = {
   success: {
@@ -65,8 +68,10 @@ form.addEventListener("submit", function (e) {
   phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
 
   const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
+  formData.append("access_key", "8dc4d7a7-bd3c-4ea3-99a4-d5ea0f637ed6");
+  formData.append("subject", "New Submission from Web3Forms");
+  // const object = Object.fromEntries(formData);
+  // const json = JSON.stringify(object);
 
   // Start steps
   formContainer.style.display = "none";
@@ -74,11 +79,7 @@ form.addEventListener("submit", function (e) {
 
   fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: json,
+    body: formData,
   })
     .then(async (response) => {
       if (response.status == 200) {
@@ -115,4 +116,19 @@ form.addEventListener("submit", function (e) {
       set forms: visibility: visible
       reset the form to repeat the process again.
 
+[03/10/2025]
+
+[] Make attachment required
+[] Create function to check file size
+[] Look into google captcha v3
+[] Implement domain restriction
+[] Customize email massaging
+[] Style form
+
+[] Dynamic file name change
+      - default message when no attachment has been added
+      - when file is uploaded, get name and replace default message
+      - when file is uploaded, display 'x' icon
+
+[] On label hover change the background color of the upload icon
 */

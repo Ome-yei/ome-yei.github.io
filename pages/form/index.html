@@ -59,8 +59,10 @@
             action="https://api.web3forms.com/submit"
             method="POST"
             id="form"
+            enctype="multipart/form-data"
+            method="POST"
           >
-            <input
+            <!-- <input
               type="hidden"
               name="access_key"
               value="8dc4d7a7-bd3c-4ea3-99a4-d5ea0f637ed6"
@@ -68,8 +70,9 @@
             <input
               type="hidden"
               name="subject"
-              value="New Submission Jon Application"
-            />
+              value="New Submission Job Application"
+            /> -->
+            <input type="hidden" name="from_name" value="Job Application" />
             <input
               type="checkbox"
               name="botcheck"
@@ -105,6 +108,36 @@
                 />
                 <div class="underline"></div>
                 <label for="">Phone Number</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="attachment__container">
+                <p class="attachment__input__label">Upload Resume</p>
+                <div class="attachment__input_container">
+                  <label for="attachment" class="attachment__input">
+                    <img
+                      src="assets/icons/upload_icon.svg"
+                      alt=""
+                      class="attachment__upload__icon"
+                    />
+                    <div class="attachment__input__file__container">
+                      <p class="attachment__uploaded__file__name">
+                        No file chosen
+                      </p>
+                      <!-- This will have to eb dynamic -->
+                      <img
+                        src="assets/icons//remove_icon.svg.svg"
+                        class="attachment__remove__icon"
+                      />
+                    </div>
+                  </label>
+                  <input
+                    type="file"
+                    name="attachment"
+                    id="attachment"
+                    required
+                  />
+                </div>
               </div>
             </div>
             <div class="form-row submit-button_container">
