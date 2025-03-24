@@ -22,8 +22,35 @@ const formSubmitResult_Text = document.querySelector(
 
 const phoneNumberInput = document.getElementById("phoneInput");
 
+// input file name
+const fileName = document.querySelector(".attachment__uploaded__file__name");
+// remove icon
+const removeFileIcon = document.querySelector('.attachment__remove__icon');
+
 // Attachment
 const file = document.getElementById("attachment");
+
+const resetAttachmentUpload = () => {
+  file.value = "";
+  fileName.textContent = "No file chosen"
+  removeFileIcon.classList.toggle('attachment__remove__icon--show');
+
+}
+
+file.addEventListener('change', function () {
+  console.log("# file change event triggered")
+  if (this.files.length > 0) {
+    const selectedFile = this.files[0];
+    // change name 
+    fileName.textContent = selectedFile.name;
+    // add remove icon
+    removeFileIcon.classList.toggle('attachment__remove__icon--show');
+  } else {
+    resetAttachmentUpload()
+  }
+});
+
+removeFileIcon.addEventListener("click", resetAttachmentUpload)
 
 /***   Global  Variables   ***/
 const formSubmitResultMessages = {
@@ -85,6 +112,7 @@ form.addEventListener("submit", function (e) {
       if (response.status == 200) {
         sendingLoader.style.display = "none";
         setFormSubmitResult(formSubmitResultMessages.success);
+        resetAttachmentUpload();
       } else {
         console.log(response);
       }
@@ -92,6 +120,7 @@ form.addEventListener("submit", function (e) {
     .catch((error) => {
       sendingLoader.style.display = "none";
       setFormSubmitResult(formSubmitResultMessages.error);
+      resetAttachmentUpload();
     })
     .then(function () {
       form.reset();
