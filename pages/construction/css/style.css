@@ -678,6 +678,7 @@ form .form-row .textarea {
 }
 
 .contact__section-info {
+  z-index: 10;
   grid-area: 1/1;
   height: 100%;
   display: flex;
