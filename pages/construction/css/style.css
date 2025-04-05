@@ -708,6 +708,11 @@ form .form-row .textarea {
   color: var(--neutral-light);
 }
 
+/* targeting the ios phone number styles */
+a[href^="tel"] {
+  color: inherit;
+}
+
 /* ================================================================================================ */
 /*******************************/
 /**** Media Query - 600px ******/
