@@ -70,16 +70,19 @@
               <nav class="desktop__navigation-header-nav">
                 <ul>
                   <li class="navigation-header-nav-items">
-                    <a href="#services" class="nav-items-links"> Services </a>
+                    <a href="#services" class="nav-items-links">Services</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#about" class="nav-items-links"> About </a>
+                    <a href="#about" class="nav-items-links">About</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#team" class="nav-items-links"> Team </a>
+                    <a href="#team" class="nav-items-links">Team</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#contact" class="nav-items-links"> Contact </a>
+                    <a href="#contact" class="nav-items-links">Contact</a>
+                  </li>
+                  <li class="navigation-header-nav-items">
+                    <a href="#applyNow" class="nav-items-links">Apply Now</a>
                   </li>
                 </ul>
               </nav>
@@ -100,6 +103,9 @@
                 </li>
                 <li class="navigation-header-nav-items">
                   <a href="#contact" class="nav-items-links"> Contact </a>
+                </li>
+                <li class="navigation-header-nav-items">
+                  <a href="#applyNow" class="nav-items-links"> Apply Now </a>
                 </li>
               </ul>
             </nav>
@@ -150,9 +156,14 @@
             A <span>family owned</span> company <br />
             specialized in heavy civil <br />utilities.
           </p>
-          <a href="#services">
-            <button class="hero__section-button">View Services</button>
-          </a>
+          <div class="hero__section-buttons__container">
+            <a href="#services">
+              <button class="hero__section-button">View Services</button>
+            </a>
+            <a href="#applyNow" class="apply__now__link">
+              <button class="hero__section-button">Apply Now</button>
+            </a>
+          </div>
         </div>
         <div class="carousel__nav">
           <button
@@ -387,6 +398,101 @@
                 <h3 class="team_card-subtitle">Assistant Project Estimator</h3>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+      <!------------------------------------------->
+      <!--                Apply Now              -->
+      <!------------------------------------------->
+      <section id="applyNow" class="page__section apply__now__section">
+        <div class="container">
+          <h2 class="page__section-header">Apply Now</h2>
+          <!-- Sending ... -->
+          <div class="sending-form loader"></div>
+          <!-- Form Submit Result -->
+          <div class="form-submit-result">
+            <img class="form-submit-result_icon" src="" alt="" />
+            <h4 class="form-submit-result_header"></h4>
+            <p class="form-submit-result_text"></p>
+          </div>
+          <!-- Form -->
+          <div class="form-info">
+            <p>Interested in joining our team? We'd love to hear from you.</p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="form"
+              enctype="multipart/form-data"
+              method="POST"
+            >
+              <input
+                type="checkbox"
+                name="botcheck"
+                id=""
+                style="display: none"
+              />
+
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="text" name="first name" required />
+                  <div class="underline"></div>
+                  <label for="">First Name</label>
+                </div>
+                <div class="input-data input-data-second-column">
+                  <input type="text" name="last name" required />
+                  <div class="underline"></div>
+                  <label for="">Last Name</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="email" name="email" required />
+                  <div class="underline"></div>
+                  <label for="">Email Address</label>
+                </div>
+                <div class="input-data input-data-second-column">
+                  <input
+                    type="tel"
+                    id="phoneInput"
+                    name="phone number"
+                    maxlength="12"
+                    required
+                  />
+                  <div class="underline"></div>
+                  <label for="">Phone Number</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="attachment__container">
+                  <p class="attachment__input__label">Upload Resume</p>
+                  <div class="attachment__input__container">
+                    <label for="attachment" class="attachment__input">
+                      <img
+                        src="assets/icons/upload_icon.svg"
+                        alt=""
+                        class="attachment__upload__icon"
+                      />
+                      <p class="attachment__uploaded__file__name">
+                        No file chosen
+                      </p>
+                    </label>
+                    <img
+                      src="assets/icons//remove_icon.svg.svg"
+                      class="attachment__remove__icon"
+                    />
+                  </div>
+                  <input
+                    type="file"
+                    name="attachment"
+                    id="attachment"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row submit-button_container">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
